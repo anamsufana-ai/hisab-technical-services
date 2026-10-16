@@ -256,6 +256,7 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(47,111,224,.25);b
 /* Full-width hero picture, text on the left, even shading across the screen */
 @media (min-width:861px){
   .hero-bg{opacity:.75}
+  .hero .wrap{width:min(1400px,100% - 96px)}
   .hero:after{background:linear-gradient(180deg,rgba(11,16,32,.72),rgba(11,16,32,.82))}
 }
 /* Preview: everything fits above the call bar on phones (nothing removed) */
