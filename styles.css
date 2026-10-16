@@ -251,4 +251,4 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(47,111,224,.25);b
 .hero .tagline{font-size:clamp(20px,2.2vw,28px);font-weight:700;color:#fff;margin:-4px 0 14px}
 @media (max-width:860px){.topbar{display:none}}
 .brand img{height:66px}
-@media (max-width:600px){.brand img{height:56px}}
+@media (max-width:600px){.brand img{height:64px}}
