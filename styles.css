@@ -252,11 +252,4 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(47,111,224,.25);b
 @media (max-width:860px){.topbar{display:none}}
 .brand img{height:66px}
 @media (max-width:600px){.brand img{height:64px}}
-@media (max-width:600px){
-  .hero .wrap{padding:40px 0 48px}
-  .hero-chips{display:none}
-  .hero p.lead{font-size:17px}
-  .hero-actions{margin:22px 0 0}
-  .hero .eyebrow{margin-bottom:10px}
-}
 .footer-credit{flex-direction:column;gap:4px}
