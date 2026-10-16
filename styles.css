@@ -250,3 +250,5 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(47,111,224,.25);b
 @media (max-width:600px){.ref-grid{grid-template-columns:1fr}.project-block .gallery{grid-template-columns:1fr 1fr!important}.project-block .gallery img{height:150px}.project-block .gallery img:first-child{height:250px;grid-row:auto}}
 .hero .tagline{font-size:clamp(20px,2.2vw,28px);font-weight:700;color:#fff;margin:-4px 0 14px}
 @media (max-width:860px){.topbar{display:none}}
+.brand img{height:66px}
+@media (max-width:600px){.brand img{height:56px}}
