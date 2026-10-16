@@ -76,7 +76,7 @@ FOOT = f"""</main>
 <div><h4>Company</h4><a href="about.html">About us</a><a href="projects.html">Projects</a><a href="contact.html#book">Free site inspection</a></div>
 <div><h4>Contact</h4><a href="{TEL}">{PHONE}</a><a href="{WA}" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:{EMAIL}">{EMAIL}</a><p>Dubai, United Arab Emirates<br>DED licence no. 1229557</p></div>
 </div>
-<div class="footer-base"><span>© <span id="year">2026</span> Hisab Technical Services LLC</span><span>Air conditioning installation · VRF · Ducted split · Dubai · Sharjah · UAE</span><span>© 2026 Designed by ALEXIS FZC LLC</span></div>
+<div class="footer-base"><span>© 2026 Hisab Technical Services LLC. Designed By Alexis FZC LLC</span></div>
 </div></footer>
 <div class="callbar"><a href="{TEL}">Call</a><a href="{WA}" target="_blank" rel="noopener">WhatsApp</a></div>
 <script src="site.js"></script>
