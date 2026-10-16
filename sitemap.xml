@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://hisab-technical-services.netlify.app/</loc></url>
-  <url><loc>https://hisab-technical-services.netlify.app/ac-systems</loc></url>
-  <url><loc>https://hisab-technical-services.netlify.app/projects</loc></url>
-  <url><loc>https://hisab-technical-services.netlify.app/about</loc></url>
-  <url><loc>https://hisab-technical-services.netlify.app/contact</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://hisab-technical-services.netlify.app/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hisab-technical-services.netlify.app/"/><xhtml:link rel="alternate" hreflang="ar" href="https://hisab-technical-services.netlify.app/ar/"/></url>
+  <url><loc>https://hisab-technical-services.netlify.app/ar/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hisab-technical-services.netlify.app/"/><xhtml:link rel="alternate" hreflang="ar" href="https://hisab-technical-services.netlify.app/ar/"/></url>
+  <url><loc>https://hisab-technical-services.netlify.app/ac-systems</loc><xhtml:link rel="alternate" hreflang="en" href="https://hisab-technical-services.netlify.app/ac-systems"/><xhtml:link rel="alternate" hreflang="ar" href="https://hisab-technical-services.netlify.app/ar/ac-systems"/></url>
+  <url><loc>https://hisab-technical-services.netlify.app/ar/ac-systems</loc><xhtml:link rel="alternate" hreflang="en" href="https://hisab-technical-services.netlify.app/ac-systems"/><xhtml:link rel="alternate" hreflang="ar" href="https://hisab-technical-services.netlify.app/ar/ac-systems"/></url>
+  <url><loc>https://hisab-technical-services.netlify.app/projects</loc><xhtml:link rel="alternate" hreflang="en" href="https://hisab-technical-services.netlify.app/projects"/><xhtml:link rel="alternate" hreflang="ar" href="https://hisab-technical-services.netlify.app/ar/projects"/></url>
+  <url><loc>https://hisab-technical-services.netlify.app/ar/projects</loc><xhtml:link rel="alternate" hreflang="en" href="https://hisab-technical-services.netlify.app/projects"/><xhtml:link rel="alternate" hreflang="ar" href="https://hisab-technical-services.netlify.app/ar/projects"/></url>
+  <url><loc>https://hisab-technical-services.netlify.app/about</loc><xhtml:link rel="alternate" hreflang="en" href="https://hisab-technical-services.netlify.app/about"/><xhtml:link rel="alternate" hreflang="ar" href="https://hisab-technical-services.netlify.app/ar/about"/></url>
+  <url><loc>https://hisab-technical-services.netlify.app/ar/about</loc><xhtml:link rel="alternate" hreflang="en" href="https://hisab-technical-services.netlify.app/about"/><xhtml:link rel="alternate" hreflang="ar" href="https://hisab-technical-services.netlify.app/ar/about"/></url>
+  <url><loc>https://hisab-technical-services.netlify.app/contact</loc><xhtml:link rel="alternate" hreflang="en" href="https://hisab-technical-services.netlify.app/contact"/><xhtml:link rel="alternate" hreflang="ar" href="https://hisab-technical-services.netlify.app/ar/contact"/></url>
+  <url><loc>https://hisab-technical-services.netlify.app/ar/contact</loc><xhtml:link rel="alternate" hreflang="en" href="https://hisab-technical-services.netlify.app/contact"/><xhtml:link rel="alternate" hreflang="ar" href="https://hisab-technical-services.netlify.app/ar/contact"/></url>
 </urlset>

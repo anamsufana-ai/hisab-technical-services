@@ -28,7 +28,8 @@ if (form) {
     const status = document.querySelector('#form-status');
     const button = form.querySelector('button[type="submit"]');
     button.disabled = true;
-    status.textContent = 'Sending…';
+    const ar = document.documentElement.lang === 'ar';
+    status.textContent = ar ? 'جارٍ الإرسال…' : 'Sending…';
     try {
       const res = await fetch('/', {
         method: 'POST',
@@ -36,9 +37,9 @@ if (form) {
         body: new URLSearchParams(new FormData(form)).toString()
       });
       if (!res.ok) throw new Error(res.status);
-      window.location.href = '/thank-you';
+      window.location.href = form.getAttribute('action') || '/thank-you';
     } catch (e) {
-      status.textContent = 'Sorry, the request could not be sent. Please call +971 55 828 5372.';
+      status.textContent = ar ? 'عذراً، تعذّر إرسال الطلب. يرجى الاتصال على ‎+971 55 828 5372.' : 'Sorry, the request could not be sent. Please call +971 55 828 5372.';
       button.disabled = false;
     }
   });

@@ -19,6 +19,10 @@ MEP, electrical, plumbing, gypsum and fit-out content from the previous draft wa
 | `about.html` | Company, leadership, vision, mission, principles |
 | `thank-you.html`, `404.html` | Form success page and not-found page |
 
+## Arabic version
+Every page has an Arabic twin in `ar/` (right-to-left, Tajawal font). The header button **العربية / English** switches language.
+Build both: `python3 _tools/build.py . && python3 _tools/build_ar.py .` (Arabic copy lives in `_tools/build_ar.py`).
+
 ## Request form
 The form uses **Netlify Forms** (form name `site-inspection`). Submissions appear in Netlify → the site → **Forms**.
 To get an e-mail for each request: Netlify → Forms → **Form notifications** → Add notification → Email.

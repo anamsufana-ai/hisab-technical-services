@@ -32,8 +32,13 @@ ICON = {
  "users": '<svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-4 3-6 6.5-6s6 2 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.5 0 4 1.5 4.5 4.5"/></svg>',
 }
 
+AR_SKIP = {"404.html"}
+
 def head(title, desc, path, extra=""):
     url = SITE + "/" + ("" if path == "index.html" else path.replace(".html", ""))
+    ar_url = SITE + "/ar/" + ("" if path == "index.html" else path.replace(".html", ""))
+    alt = "" if path in AR_SKIP else f'<link rel="alternate" hreflang="en" href="{url}">\n<link rel="alternate" hreflang="ar" href="{ar_url}">\n<link rel="alternate" hreflang="x-default" href="{url}">\n'
+    lang = "" if path in AR_SKIP else f'<a class="lang-switch" href="ar/{path}" hreflang="ar" lang="ar">العربية</a>'
     menu = "".join(f'<a href="{h}"' + (' aria-current="page"' if h == path else '') + f'>{t}</a>' for h, t in NAV)
     return f"""<!doctype html>
 <html lang="en">
@@ -43,7 +48,7 @@ def head(title, desc, path, extra=""):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
-<meta property="og:type" content="website">
+{alt}<meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
@@ -62,8 +67,8 @@ def head(title, desc, path, extra=""):
 <div class="topbar"><div class="wrap"><span>Split AC · VRF · Ducted split AC<span class="hide-sm"> · New buildings &amp; villas · Dubai &amp; Sharjah</span></span><span class="top-links"><a href="{WA}" target="_blank" rel="noopener">WhatsApp</a><a href="{TEL}">{PHONE}</a></span></div></div>
 <header class="header"><div class="wrap nav">
 <a class="brand" href="index.html" aria-label="Hisab Technical Services home"><img src="assets/hisab-logo-header-v3.png" alt="Hisab Technical Services LLC – your trusted partner for HVAC solutions" width="576" height="203"></a>
-<button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">☰</button>
-<nav class="menu" id="menu" aria-label="Main">{menu}<a class="btn btn-red" href="contact.html#book">Free site inspection</a></nav>
+<div class="nav-end"><nav class="menu" id="menu" aria-label="Main">{menu}<a class="btn btn-red" href="contact.html#book">Free site inspection</a></nav>
+{lang}<button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">☰</button></div>
 </div></header>
 <main id="main">
 """
