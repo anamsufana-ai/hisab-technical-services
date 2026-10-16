@@ -61,7 +61,7 @@ def head(title, desc, path, extra=""):
 <a class="skip" href="#main">Skip to content</a>
 <div class="topbar"><div class="wrap"><span>Split AC · VRF · Ducted split AC<span class="hide-sm"> · New buildings &amp; villas · Dubai &amp; Sharjah</span></span><span class="top-links"><a href="{WA}" target="_blank" rel="noopener">WhatsApp</a><a href="{TEL}">{PHONE}</a></span></div></div>
 <header class="header"><div class="wrap nav">
-<a class="brand" href="index.html" aria-label="Hisab Technical Services home"><img src="assets/hisab-logo-header-v2.png" alt="Hisab Technical Services LLC – your trusted partner for HVAC solutions" width="576" height="203"></a>
+<a class="brand" href="index.html" aria-label="Hisab Technical Services home"><img src="assets/hisab-logo-header-v3.png" alt="Hisab Technical Services LLC – your trusted partner for HVAC solutions" width="576" height="203"></a>
 <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">☰</button>
 <nav class="menu" id="menu" aria-label="Main">{menu}<a class="btn btn-red" href="contact.html#book">Free site inspection</a></nav>
 </div></header>
@@ -71,7 +71,7 @@ def head(title, desc, path, extra=""):
 FOOT = f"""</main>
 <footer class="footer"><div class="wrap">
 <div class="footer-grid">
-<div><img src="assets/hisab-logo-v2.png" alt="Hisab Technical Services LLC" width="590" height="235" loading="lazy"><p>Split AC, VRF and ducted split air conditioning for new buildings, towers and villas in Dubai and Sharjah.</p></div>
+<div><img src="assets/hisab-logo.png" alt="Hisab Technical Services LLC" width="590" height="235" loading="lazy"><p>Split AC, VRF and ducted split air conditioning for new buildings, towers and villas in Dubai and Sharjah.</p></div>
 <div><h4>AC systems</h4><a href="ac-systems.html#split">Split AC</a><a href="ac-systems.html#vrf">VRF / VRV systems</a><a href="ac-systems.html#ducted">Ducted split AC &amp; ductwork</a></div>
 <div><h4>Company</h4><a href="about.html">About us</a><a href="projects.html">Projects</a><a href="contact.html#book">Free site inspection</a></div>
 <div><h4>Contact</h4><a href="{TEL}">{PHONE}</a><a href="{WA}" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:{EMAIL}">{EMAIL}</a><p>Dubai, United Arab Emirates<br>DED licence no. 1229557</p></div>
