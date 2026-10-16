@@ -253,3 +253,23 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(47,111,224,.25);b
 .brand img{height:66px}
 @media (max-width:600px){.brand img{height:64px}}
 .footer-credit{flex-direction:column;gap:4px}
+/* Preview: centred hero on computers */
+@media (min-width:861px){
+  .hero:after{background:linear-gradient(180deg,rgba(11,16,32,.82),rgba(11,16,32,.88))}
+  .hero .wrap{text-align:center}
+  .hero h1,.hero p.lead{margin-inline:auto}
+  .hero h1{max-width:900px}
+  .hero-actions,.hero-chips{justify-content:center}
+}
+/* Preview: everything fits above the call bar on phones (nothing removed) */
+@media (max-width:600px){
+  .hero .wrap{padding:28px 0 36px}
+  .hero h1{font-size:34px}
+  .hero .tagline{font-size:19px;margin-bottom:10px}
+  .hero p.lead{font-size:16px;line-height:1.5;margin-bottom:0}
+  .hero-actions{margin:18px 0 16px;gap:10px}
+  .hero-actions .btn{padding:12px 18px}
+  .hero .eyebrow{margin-bottom:10px;font-size:11px}
+  .hero-chips{gap:6px}
+  .chip{font-size:12px;padding:5px 10px}
+}
