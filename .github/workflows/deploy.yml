@@ -1,0 +1,30 @@
+name: Deploy to Netlify
+
+# Run from the Actions tab (or by Claude). The Netlify deploy link is passed in
+# as an input each time, so no key is stored in this repository.
+on:
+  workflow_dispatch:
+    inputs:
+      proxy_path:
+        description: Netlify MCP proxy path for this deploy
+        required: true
+      site_id:
+        description: Netlify site ID
+        required: true
+        default: 871f0a71-076f-436e-8b93-623d96600f68
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Deploy
+        env:
+          PROXY_PATH: ${{ inputs.proxy_path }}
+          SITE_ID: ${{ inputs.site_id }}
+        run: |
+          echo "::add-mask::$PROXY_PATH"
+          npx -y @netlify/mcp@latest --site-id "$SITE_ID" --proxy-path "$PROXY_PATH"
