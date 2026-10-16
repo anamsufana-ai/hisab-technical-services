@@ -271,3 +271,4 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(47,111,224,.25);b
   .hero-chips{gap:6px}
   .chip{font-size:12px;padding:5px 10px}
 }
+.footer-base{border-top:0;margin-top:14px;padding-top:0}
