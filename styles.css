@@ -253,10 +253,10 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(47,111,224,.25);b
 .brand img{height:66px}
 @media (max-width:600px){.brand img{height:64px}}
 .footer-credit{flex-direction:column;gap:4px}
-/* Hero as a centred card on computers: equal space left and right, text stays left */
+/* Full-width hero picture, text on the left, even shading across the screen */
 @media (min-width:861px){
-  .hero{width:min(1180px,100% - 32px);margin:24px auto 0;border-radius:24px}
-  .hero .wrap{width:100%;padding-left:64px;padding-right:64px}
+  .hero-bg{opacity:.75}
+  .hero:after{background:linear-gradient(180deg,rgba(11,16,32,.72),rgba(11,16,32,.82))}
 }
 /* Preview: everything fits above the call bar on phones (nothing removed) */
 @media (max-width:600px){
