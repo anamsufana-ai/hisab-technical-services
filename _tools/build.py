@@ -61,7 +61,7 @@ def head(title, desc, path, extra=""):
 <a class="skip" href="#main">Skip to content</a>
 <div class="topbar"><div class="wrap"><span>Split AC · VRF · Ducted split AC<span class="hide-sm"> · New buildings &amp; villas · Dubai &amp; Sharjah</span></span><span class="top-links"><a href="{WA}" target="_blank" rel="noopener">WhatsApp</a><a href="{TEL}">{PHONE}</a></span></div></div>
 <header class="header"><div class="wrap nav">
-<a class="brand" href="index.html" aria-label="Hisab Technical Services home"><img src="assets/hisab-logo-header.png" alt="Hisab Technical Services LLC – your trusted partner for HVAC solutions" width="576" height="203"></a>
+<a class="brand" href="index.html" aria-label="Hisab Technical Services home"><img src="assets/hisab-logo-header-v2.png" alt="Hisab Technical Services LLC – your trusted partner for HVAC solutions" width="576" height="203"></a>
 <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">☰</button>
 <nav class="menu" id="menu" aria-label="Main">{menu}<a class="btn btn-red" href="contact.html#book">Free site inspection</a></nav>
 </div></header>
