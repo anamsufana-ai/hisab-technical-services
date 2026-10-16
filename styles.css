@@ -253,13 +253,10 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(47,111,224,.25);b
 .brand img{height:66px}
 @media (max-width:600px){.brand img{height:64px}}
 .footer-credit{flex-direction:column;gap:4px}
-/* Preview: centred hero on computers */
+/* Hero as a centred card on computers: equal space left and right, text stays left */
 @media (min-width:861px){
-  .hero:after{background:linear-gradient(180deg,rgba(11,16,32,.82),rgba(11,16,32,.88))}
-  .hero .wrap{text-align:center}
-  .hero h1,.hero p.lead{margin-inline:auto}
-  .hero h1{max-width:900px}
-  .hero-actions,.hero-chips{justify-content:center}
+  .hero{width:min(1180px,100% - 32px);margin:24px auto 0;border-radius:24px}
+  .hero .wrap{width:100%;padding-left:64px;padding-right:64px}
 }
 /* Preview: everything fits above the call bar on phones (nothing removed) */
 @media (max-width:600px){
