@@ -229,7 +229,8 @@ home = head("AC, VRF & Ducted Split AC Installation for Buildings & Villas in Du
             "index.html", ld(BUSINESS) + faq_ld())
 home += f"""<section class="hero"><div class="hero-bg" role="img" aria-label="Hisab technicians installing VRF outdoor units on a Dubai rooftop"></div><div class="wrap">
 <div class="eyebrow">Air conditioning installation · Dubai &amp; Sharjah</div>
-<h1>AC for new buildings and villas. <span class="accent">Installed right.</span></h1>
+<h1>HVAC solutions for new buildings. <span class="accent">Installed right.</span></h1>
+<p class="tagline">Comfort is a system. We make it work.</p>
 <p class="lead">Split AC, VRF and ducted split systems with ductwork, for new towers, buildings and villas across Dubai and Sharjah. From design to handover.</p>
 <div class="hero-actions"><a class="btn btn-red" href="contact.html#book">Book a free site inspection</a><a class="btn btn-ghost" href="{WA}" target="_blank" rel="noopener">{WA_ICON} WhatsApp us</a></div>
 <div class="hero-chips"><span class="chip">Split AC</span><span class="chip">VRF / VRV systems</span><span class="chip">Ducted split AC</span><span class="chip">Ductwork</span></div>

@@ -248,3 +248,4 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(47,111,224,.25);b
 .lightbox p{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#fff;margin:0}
 @media (max-width:1000px){.ref-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){.ref-grid{grid-template-columns:1fr}.project-block .gallery{grid-template-columns:1fr 1fr!important}.project-block .gallery img{height:150px}.project-block .gallery img:first-child{height:250px;grid-row:auto}}
+.hero .tagline{font-size:clamp(20px,2.2vw,28px);font-weight:700;color:#fff;margin:-4px 0 14px}
