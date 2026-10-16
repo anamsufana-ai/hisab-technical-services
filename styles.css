@@ -272,3 +272,14 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(47,111,224,.25);b
   .chip{font-size:12px;padding:5px 10px}
 }
 .footer-base{border-top:0;margin-top:14px;padding-top:0}
+/* Phones: hero fills the screen between the header and the call bar, with even spacing */
+@media (max-width:860px){
+  .hero{min-height:calc(100svh - 84px - 54px);display:flex;align-items:center}
+  .hero .wrap{padding:28px 0}
+  .hero .eyebrow{margin-bottom:22px}
+  .hero h1{margin-bottom:22px}
+  .hero .tagline{margin:0 0 18px}
+  .hero p.lead{margin-bottom:0}
+  .hero-actions{margin:30px 0 26px;gap:14px}
+}
+@media (max-width:600px){.hero h1{font-size:38px}.hero p.lead{font-size:17px}}
