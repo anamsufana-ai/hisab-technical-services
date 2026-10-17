@@ -14,7 +14,7 @@ SITE = "https://hisab-technical-services.netlify.app"
 PHONE = "+971 55 828 5372"
 TEL = "tel:+971558285372"
 WA = "https://wa.me/971558285372?text=Hello%20Hisab%2C%20I%20would%20like%20a%20free%20site%20inspection."
-EMAIL = "mss.ca@outlook.com"
+EMAIL = "hvac@hisabtechnical.com"
 IG = "https://instagram.com/hisab_technical_services_llc"
 
 def photo(name):
