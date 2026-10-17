@@ -10,7 +10,7 @@ Optional: team.jpg and uniform-back.jpg switch on the "Our team" section when pr
 import json, os, sys
 
 OUT = sys.argv[1]
-SITE = "https://hisab-technical-services.netlify.app"
+SITE = "https://hisabtechnical.com"
 PHONE = "+971 55 828 5372"
 TEL = "tel:+971558285372"
 WA = "https://wa.me/971558285372?text=Hello%20Hisab%2C%20I%20would%20like%20a%20free%20site%20inspection."

@@ -11,7 +11,7 @@ import json, os, sys
 OUT = sys.argv[1]
 AR = os.path.join(OUT, "ar")
 os.makedirs(AR, exist_ok=True)
-SITE = "https://hisab-technical-services.netlify.app"
+SITE = "https://hisabtechnical.com"
 PHONE = "+971 55 828 5372"
 TEL = "tel:+971558285372"
 WA = "https://wa.me/971558285372?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%AD%D8%B3%D8%A7%D8%A8%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D9%85%D8%B9%D8%A7%D9%8A%D9%86%D8%A9%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9%20%D9%84%D9%84%D9%85%D9%88%D9%82%D8%B9."
