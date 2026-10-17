@@ -34,6 +34,15 @@ ICON = {
 
 AR_SKIP = {"404.html"}
 
+BASE_KW = "HVAC company Dubai, AC installation Dubai, air conditioning contractor Dubai, AC installation Sharjah, HVAC contractor UAE"
+KEYWORDS = {
+ "index.html": "split AC installation, VRF installation Dubai, VRV system, ducted split AC, ductwork installation, AC for new buildings, villa air conditioning, tower AC installation",
+ "ac-systems.html": "split AC vs VRF, VRF vs ducted split, VRF system Dubai, ducted split AC installation, concealed ducted AC, cooling load calculation, AC system for villa",
+ "projects.html": "HVAC projects Sharjah, AC projects Dubai, heritage building air conditioning, Al Heera Literary Council, Dibba Heritage Souq, Al Hisn Fili Fort, Al Dhaid Fort Tower",
+ "about.html": "Hisab Technical Services LLC, HVAC engineer Dubai, MEP air conditioning subcontractor, DED licensed AC company",
+ "contact.html": "free site inspection AC, AC installation quote Dubai, HVAC quotation, book AC inspection Sharjah",
+}
+
 def head(title, desc, path, extra=""):
     url = SITE + "/" + ("" if path == "index.html" else path.replace(".html", ""))
     ar_url = SITE + "/ar/" + ("" if path == "index.html" else path.replace(".html", ""))
@@ -47,13 +56,23 @@ def head(title, desc, path, extra=""):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<meta name="keywords" content="{KEYWORDS.get(path, '') + (', ' if path in KEYWORDS else '') + BASE_KW}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="geo.region" content="AE-DU">
+<meta name="geo.placename" content="Dubai">
 <link rel="canonical" href="{url}">
 {alt}<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hisab Technical Services">
+<meta property="og:locale" content="en_AE">
+<meta property="og:locale:alternate" content="ar_AE">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/assets/og-image.jpg">
+<meta property="og:image:alt" content="Hisab Technical Services HVAC team installing air conditioning in Dubai">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
 <meta name="theme-color" content="#0b1020">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -93,7 +112,14 @@ def ld(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + "</script>\n"
 
 BUSINESS = {
-    "@context": "https://schema.org", "@type": "HVACBusiness", "name": "Hisab Technical Services LLC",
+    "@context": "https://schema.org", "@type": "HVACBusiness", "@id": SITE + "/#business", "name": "Hisab Technical Services LLC",
+    "alternateName": ["Hisab Technical Services", "حساب للخدمات الفنية"],
+    "description": "Dubai HVAC contractor that designs, supplies, installs and commissions split AC, VRF/VRV and ducted split air conditioning with ductwork for new buildings, towers and villas in Dubai and Sharjah.",
+    "founder": [{"@type": "Person", "name": "Eng. Mohammad Rafique Attar", "jobTitle": "Founding Partner"},
+                {"@type": "Person", "name": "Muhammad Saadat Shafqat", "honorificSuffix": "ACA", "jobTitle": "Co-Founder & Managing Director"}],
+    "identifier": {"@type": "PropertyValue", "name": "DED licence", "value": "1229557"},
+    "knowsAbout": ["HVAC", "Split AC installation", "VRF / VRV systems", "Ducted split AC", "Ductwork", "Cooling load calculation", "Testing and commissioning"],
+    "knowsLanguage": ["en", "ar"],
     "slogan": "Your trusted partner for HVAC solutions", "url": SITE, "telephone": "+971558285372", "email": EMAIL,
     "image": SITE + "/assets/og-image.jpg", "logo": SITE + "/assets/hisab-logo.png", "foundingDate": "2023-08",
     "address": {"@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE"},
@@ -105,6 +131,9 @@ BUSINESS = {
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ducted split AC and ductwork design and installation"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Free site inspection"}}]},
 }
+
+WEBSITE = {"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/",
+           "name": "Hisab Technical Services", "inLanguage": ["en", "ar"], "publisher": {"@id": SITE + "/#business"}}
 
 FAQ = [
  ("Is the site inspection free?",
@@ -231,7 +260,7 @@ def ref_cards(link_prefix="projects.html"):
 # ---------- Home ----------
 home = head("AC, VRF & Ducted Split AC Installation for Buildings & Villas in Dubai | Hisab Technical Services",
             "Hisab Technical Services installs split AC, VRF/VRV and ducted split air conditioning with ductwork for new buildings, towers and villas in Dubai and Sharjah. Free site inspection.",
-            "index.html", ld(BUSINESS) + faq_ld())
+            "index.html", ld(BUSINESS) + ld(WEBSITE) + faq_ld())
 home += f"""<section class="hero"><div class="hero-bg" role="img" aria-label="Hisab technicians installing VRF outdoor units on a Dubai rooftop"></div><div class="wrap">
 <div class="eyebrow">Air conditioning installation · Dubai &amp; Sharjah</div>
 <h1>HVAC solutions for new buildings. <span class="accent">Installed right.</span></h1>

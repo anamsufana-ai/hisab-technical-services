@@ -6,7 +6,7 @@ Usage: python3 _tools/build_ar.py <site folder>   (run after build.py)
 Same pages, photos and form as the English site. Every page links to its English twin
 (English pages link back with the "العربية" button). Assets are loaded from the site root (../).
 """
-import json, os, sys
+import datetime, json, os, sys
 
 OUT = sys.argv[1]
 AR = os.path.join(OUT, "ar")
@@ -37,6 +37,15 @@ ICON = {
  "users": '<svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-4 3-6 6.5-6s6 2 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.5 0 4 1.5 4.5 4.5"/></svg>',
 }
 
+BASE_KW = "شركة تكييف دبي, تركيب تكييف دبي, مقاول تكييف دبي, تركيب تكييف الشارقة, HVAC دبي"
+KEYWORDS = {
+ "index.html": "تركيب تكييف سبليت, تركيب VRF دبي, نظام VRV, سبليت مخفي, تكييف مخفي بالدكت, أعمال الدكت, تكييف المباني الجديدة, تكييف الفلل",
+ "ac-systems.html": "الفرق بين VRF والسبليت, سبليت مخفي أم VRF, نظام VRF دبي, تركيب سبليت مخفي, حساب الأحمال الحرارية, تكييف الفلل",
+ "projects.html": "مشاريع تكييف الشارقة, مشاريع تكييف دبي, تكييف المباني التراثية, مجلس الحيرة الأدبي, سوق دبا التراثي, حصن فلي",
+ "about.html": "حساب للخدمات الفنية, مهندس تكييف دبي, مقاول تكييف من الباطن, شركة تكييف مرخصة",
+ "contact.html": "معاينة مجانية تكييف, عرض سعر تكييف دبي, حجز معاينة تكييف الشارقة",
+}
+
 def head(title, desc, path, extra=""):
     slug = "" if path == "index.html" else path.replace(".html", "")
     url, en_url = SITE + "/ar/" + slug, SITE + "/" + slug
@@ -48,17 +57,26 @@ def head(title, desc, path, extra=""):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<meta name="keywords" content="{KEYWORDS.get(path, '') + (', ' if path in KEYWORDS else '') + BASE_KW}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="geo.region" content="AE-DU">
+<meta name="geo.placename" content="Dubai">
 <link rel="canonical" href="{url}">
 <link rel="alternate" hreflang="en" href="{en_url}">
 <link rel="alternate" hreflang="ar" href="{url}">
 <link rel="alternate" hreflang="x-default" href="{en_url}">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="حساب للخدمات الفنية">
 <meta property="og:locale" content="ar_AE">
+<meta property="og:locale:alternate" content="en_AE">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/assets/og-image.jpg">
+<meta property="og:image:alt" content="فريق حساب للخدمات الفنية أثناء تركيب أنظمة التكييف في دبي">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
 <meta name="theme-color" content="#0b1020">
 <link rel="icon" type="image/png" href="{R}assets/favicon.png">
 <link rel="apple-touch-icon" href="{R}assets/apple-touch-icon.png">
@@ -99,7 +117,12 @@ def ld(obj):
 
 BUSINESS = {
     "@context": "https://schema.org", "@type": "HVACBusiness", "name": "حساب للخدمات الفنية ذ.م.م",
-    "alternateName": "Hisab Technical Services LLC", "inLanguage": "ar",
+    "@id": SITE + "/#business", "alternateName": ["Hisab Technical Services LLC", "Hisab Technical Services"], "inLanguage": "ar",
+    "description": "مقاول تكييف في دبي يصمم ويورّد ويركّب ويشغّل أنظمة تكييف سبليت وVRF/VRV والسبليت المخفي مع أعمال الدكت للمباني والأبراج والفلل الجديدة في دبي والشارقة.",
+    "founder": [{"@type": "Person", "name": "Eng. Mohammad Rafique Attar", "jobTitle": "Founding Partner"},
+                {"@type": "Person", "name": "Muhammad Saadat Shafqat", "honorificSuffix": "ACA", "jobTitle": "Co-Founder & Managing Director"}],
+    "identifier": {"@type": "PropertyValue", "name": "DED licence", "value": "1229557"},
+    "knowsLanguage": ["ar", "en"],
     "slogan": "شريكك الموثوق لحلول التكييف والتهوية", "url": SITE + "/ar/", "telephone": "+971558285372", "email": EMAIL,
     "image": SITE + "/assets/og-image.jpg", "logo": SITE + "/assets/hisab-logo.png", "foundingDate": "2023-08",
     "address": {"@type": "PostalAddress", "addressLocality": "دبي", "addressCountry": "AE"},
@@ -469,7 +492,8 @@ pages = ["", "ac-systems", "projects", "about", "contact"]
 def url_entry(p):
     en, ar = f"{SITE}/{p}", f"{SITE}/ar/{p}"
     links = f'<xhtml:link rel="alternate" hreflang="en" href="{en}"/><xhtml:link rel="alternate" hreflang="ar" href="{ar}"/>'
-    return f"  <url><loc>{en}</loc>{links}</url>\n  <url><loc>{ar}</loc>{links}</url>\n"
+    lm = f"<lastmod>{datetime.date.today().isoformat()}</lastmod>"
+    return f"  <url><loc>{en}</loc>{lm}{links}</url>\n  <url><loc>{ar}</loc>{lm}{links}</url>\n"
 with open(os.path.join(OUT, "sitemap.xml"), "w") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
             + "".join(url_entry(p) for p in pages) + "</urlset>\n")
