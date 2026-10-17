@@ -59,7 +59,7 @@ def head(title, desc, path, extra=""):
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0b1020">
+<meta name="theme-color" content="#0B2545">
 <link rel="icon" type="image/png" href="{R}assets/favicon.png">
 <link rel="apple-touch-icon" href="{R}assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
