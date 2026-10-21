@@ -1,0 +1,28 @@
+# Hisab Technical Services on Hostinger (replaces netlify.toml)
+Options -MultiViews -Indexes
+ErrorDocument 404 /404.html
+RewriteEngine On
+
+# Always use https://hisabtechnical.com (no www)
+RewriteCond %{HTTP_HOST} ^www\.hisabtechnical\.com$ [NC]
+RewriteRule ^ https://hisabtechnical.com%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^hisabtechnical\.com$ [NC]
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://hisabtechnical.com%{REQUEST_URI} [R=301,L]
+
+# Old addresses
+RewriteRule ^services/?$ /ac-systems [R=301,L]
+RewriteRule ^maintenance(\.html)?/?$ /contact [R=301,L]
+
+# Short addresses: /contact opens contact.html, /ar/about opens ar/about.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  <If "%{REQUEST_URI} =~ m#^/assets/#">
+    Header set Cache-Control "public, max-age=604800"
+  </If>
+</IfModule>
